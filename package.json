@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun server.ts",
+    "start": "bun --hot run server.ts",
     "dev": "bun run --watch server.ts"
   },
   "devDependencies": {
@@ -18,7 +18,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@elysiajs/jwt": "^1.0.2",
+    "@elysiajs/cors": "^1.0.2",
     "@prisma/client": "^5.12.1",
     "bcryptjs": "^2.4.3",
     "elysia": "^1.0.13",

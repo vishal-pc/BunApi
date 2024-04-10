@@ -1,11 +1,16 @@
 import Elysia from "elysia";
 import { PrismaClient } from "@prisma/client";
 import figlet from "figlet";
+import { cors } from "@elysiajs/cors";
 import route from "./src/router/userRouter";
 
-const db = new PrismaClient();
-const app = new Elysia();
 const port = Bun.env.Port!;
+const db = new PrismaClient();
+const app = new Elysia().use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.get("/", () => {
   const body = figlet.textSync("Hello From Bun!");
